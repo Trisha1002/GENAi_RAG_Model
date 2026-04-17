@@ -24,7 +24,7 @@ groq_api_key = st.secrets["GROQ_API_KEY"]
 
 # ------------------ UI ------------------
 st.set_page_config(page_title="Dynamic RAG with Groq", layout="wide")
-st.image("ai_image.png")
+st.image("dog1.jpeg")
 st.title("Dynamic RAG with Groq, FAISS, and Llama3")
 
 # ------------------ SESSION STATE ------------------
@@ -69,7 +69,6 @@ with st.sidebar:
 
                 st.success("✅ Documents processed successfully!")
         else:
-            
             st.warning("Please upload at least one document.")
 
 # ------------------ MAIN ------------------
@@ -132,12 +131,10 @@ if prompt_input := st.chat_input("Ask a question about your documents..."):
                     "context": context,
                     "input": prompt_input
                 })
-else:
+            else:
+                response = "No relevant information found."
 
-    response = "No relevant information found."
-            
-
-response_time = time.process_time() - start
+            response_time = time.process_time() - start
 
         # ✅ FIXED RESPONSE DISPLAY
         with st.chat_message("assistant"):
@@ -151,6 +148,3 @@ response_time = time.process_time() - start
 
     else:
         st.warning("Please process your documents before asking questions.")
-        
-        
-      
