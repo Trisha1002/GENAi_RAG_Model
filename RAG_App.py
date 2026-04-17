@@ -135,8 +135,9 @@ if prompt_input := st.chat_input("Ask a question about your documents..."):
             else:
                 
                 response = "No relevant information found."
+            
 
-                response_time = time.process_time() - start
+            response_time = time.process_time() - start
 
         # ✅ FIXED RESPONSE DISPLAY
         with st.chat_message("assistant"):
@@ -150,3 +151,6 @@ if prompt_input := st.chat_input("Ask a question about your documents..."):
 
     else:
         st.warning("Please process your documents before asking questions.")
+        
+        
+      
