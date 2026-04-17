@@ -1,0 +1,8 @@
+## llama-index GROQ
+import os
+from llama_index.llms.groq import Groq
+from google.colab import userdata
+os.environ["GROQ_API_KEY"] = userdata.get("GROQ_API_KEY")
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+llm = Groq(model="llama2-70b-4096", api_key=GROQ_API_KEY)
+llm
